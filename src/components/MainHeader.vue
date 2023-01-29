@@ -1,36 +1,44 @@
 <template>
   <v-app-bar flat>
     <v-container class="fill-height d-flex align-center">
-      <v-avatar
-        class="mr-10 ml-4"
-        color="grey-darken-1"
-        size="32"
-      ></v-avatar>
-
-      <v-btn
-        v-for="link in links"
-        :key="link"
-        variant="text"
-      >
-        {{ link }}
-      </v-btn>
-
-      <v-spacer></v-spacer>
-
-      <v-responsive max-width="260">
-        <v-text-field
-          density="compact"
-          hide-details
-          variant="solo"
-        ></v-text-field>
-      </v-responsive>
+      <v-row justify="space-between">
+        <v-col
+          cols="6"
+        >
+          <v-btn
+            v-for="link in links"
+            :key="link"
+            variant="text"
+            @click="$router.push(link.path)"
+          >
+              {{ link.label }}
+          </v-btn>
+        </v-col>
+        <v-col
+          class="d-flex justify-end"
+          cols="2"
+        >
+            <change-theme-btn/>
+        </v-col>
+      </v-row>
     </v-container>
   </v-app-bar>
 </template>
 
-<script>
+<script >
+import ChangeThemeBtn from "@/components/ui/ChangeThemeBtn.vue";
+
 export default {
-  name: "MainHeader"
+  name: "MainHeader",
+  components:{
+    ChangeThemeBtn
+  },
+  data: () => ({
+    links: [
+      {label: 'Главная', path: '/'},
+      {label: 'Новости', path: '/news'}
+    ],
+  }),
 }
 </script>
 

@@ -9,11 +9,18 @@
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
+    "@types/axios": "^0.14.0",
+    "@vee-validate/rules": "^4.7.3",
+    "axios": "^1.2.2",
     "roboto-fontface": "*",
+    "vee-validate": "^4.7.3",
     "vue": "^3.2.38",
+    "vue-i18n": "8",
     "vue-router": "^4.0.0",
     "vuetify": "^3.0.0",
-    "webfontloader": "^1.0.0"
+    "vuex": "^4.0.2",
+    "webfontloader": "^1.0.0",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
